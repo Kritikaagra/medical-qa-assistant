@@ -1,0 +1,19 @@
+# Pinned to a combination known to work together for QLoRA fine-tuning
+# (Mistral-7B-Instruct-v0.2 + bitsandbytes 4-bit + PEFT LoRA + TRL SFTTrainer)
+# on a free-tier Colab T4 GPU as of mid-2024.
+#
+# If you install a newer transformers/trl/peft, note that TRL renamed the
+# SFTTrainer `tokenizer=` argument to `processing_class=` in later releases,
+# and moved some SFTTrainer kwargs into SFTConfig. Re-check src/finetune.py
+# against your installed version's docs if you hit a TypeError there.
+
+torch>=2.1.0
+transformers==4.41.2
+accelerate==0.30.1
+peft==0.11.1
+trl==0.9.6
+bitsandbytes==0.43.1
+datasets==2.19.1
+sentencepiece==0.2.0
+rouge_score==0.1.2
+tensorboard==2.16.2

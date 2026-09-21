@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# generated data / model artifacts — regenerate via the scripts, don't commit
+data/processed/
+adapter/
+results/eval_raw.json
+results/*.png
+runs/
+
+# secrets
+.env
+*.token
+
+.DS_Store

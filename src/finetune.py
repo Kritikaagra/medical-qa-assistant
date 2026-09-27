@@ -73,7 +73,6 @@ def main():
         )
 
     from peft import prepare_model_for_kbit_training
-    from transformers import TrainingArguments
     from trl import SFTConfig, SFTTrainer
 
     model, tokenizer = load_base_model_and_tokenizer()
@@ -98,7 +97,7 @@ def main():
         save_steps=config.SAVE_STEPS,
         bf16=True,
         report_to="tensorboard",
-        max_seq_length=config.MAX_SEQ_LENGTH,
+        max_length=config.MAX_SEQ_LENGTH,
         dataset_text_field="text",
         packing=False,
     )
@@ -109,7 +108,7 @@ def main():
         train_dataset=train_ds,
         eval_dataset=val_ds,
         peft_config=lora_config,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
     )
 
     trainer.train()

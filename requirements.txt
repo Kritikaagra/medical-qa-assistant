@@ -17,4 +17,5 @@ bitsandbytes==0.50.2
 datasets==5.0.1
 sentencepiece==0.2.2
 rouge_score==0.1.2
-tensorboard==2.16.2
+tensorboard==2.21.0
+
